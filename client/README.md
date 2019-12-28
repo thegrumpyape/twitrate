@@ -1,4 +1,6 @@
-# Twitterrate
+# Twitrate
+
+Performs sentiment analysis on the most recent tweets about a specific topic
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
