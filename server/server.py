@@ -7,6 +7,7 @@ from flask_cors import CORS
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 SECRET_KEY = os.getenv("API_SECRET")
+NUM_TWEETS = 50
 
 app = Flask(__name__)
 CORS(app)
@@ -23,7 +24,7 @@ def get_tweets(query):
     tweets = {}
     tweets["tweets"] = []
 
-    for status in tweepy.Cursor(api.search, q=query, lang='en', tweet_mode='extended').items(500):
+    for status in tweepy.Cursor(api.search, q=query, lang='en', tweet_mode='extended').items(NUM_TWEETS):
         if hasattr(status, 'retweeted_status'):
             try: 
                 tweet = status.retweeted_status.extended_tweet["full_text"]
