@@ -7,7 +7,7 @@ from flask_cors import CORS
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 SECRET_KEY = os.getenv("API_SECRET")
-NUM_TWEETS = 50
+NUM_TWEETS = 1000
 
 app = Flask(__name__)
 CORS(app)
